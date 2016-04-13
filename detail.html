@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="css/detail.css">
     <script src="js/libs/zepto.min.js"></script>
     <script src="js/libs/frozen.js"></script>
+    <script type="text/javascript" src="js/libs/ckplayer/ckplayer.js" charset="utf-8"></script>
+    <!-- <script type="text/javascript" src="js/libs/jquery.lazyload.js" charset="utf-8"></script> -->
+
     <script src="js/common.js"></script>
-    <script src="js/detail.js"></script> 
+    <script src="js/detail.js"></script>
 </head>
 <!-- 绑定资料id  这个注释可以去掉-->
 
@@ -27,11 +30,11 @@
         </header>
         <footer class="ui-footer ui-footer-btn">
             <ul class="ui-tiled">
-                <li class="ui-border-t" id="comment-btn">
-                    <i class="ui-icon2-comment"></i>
-                    <div>写评论</div>
-                    <span class="ui-border-r line-r"></span>
-                </li>
+                <!--  <li class="ui-border-t" id="comment-btn">
+                   <i class="ui-icon2-comment"></i>
+                   <div>写评论</div>
+                   <span class="ui-border-r line-r"></span>
+               </li> -->
                 <li class="ui-border-t" id="cart-btn">
                     <i class="ui-icon2-cart"></i>
                     <div>加入资源篮</div>
@@ -58,10 +61,19 @@
                 </div>
             </div>
             <div class="test-paper ui-border-b">
+                <div class="file-box ui-border-b hide" id="file-box">
+                    <div class="ui-scroller">
+                        <ul class="file-ul">
+                        </ul>
+                    </div>
+                    <div class="total">
+                        共<span class="num">0</span>份
+                    </div>
+                </div>
                 <div class="paper-content-box">
                     <div id="paper-content">
-                    </div>
-                    <!--  <iframe name="content_frame" id="content_frame" class="content_frame"  src="document/【全国百强校】安徽省合肥市第八中学2015-2016学年高一上学期期中考试数学试题（扫描版，无答案）/【全国百强校】安徽省合肥市第八中学2015-2016学年高一上学期期中考试数学试题（扫描版，无答案）.html" frameborder=0></iframe> -->
+                    </div>  
+                    </script>
                 </div>
                 <div class="show-more">
                     展开更多<i class="ui-icon-unfold"></i>
@@ -83,6 +95,13 @@
             <div class="hr ui-border-b"></div>
             <div class="comment">
                 <div class="title ui-border-b">热门评论<i class="ui-icon2-comments2"></i></div>
+                <div class="comment-area ui-row-flex">
+                    <textarea class="txt-area ui-col" placeholder="我也说一句..."></textarea>
+                    <div class="action ui-col">
+                        <div class="num" id="comments-num">180</div>
+                        <button class="ui-btn ui-btn-primary J_submit">提交</button>
+                    </div>
+                </div>
                 <ul class="list">
                     <li class="ui-row-flex ui-border-b">
                         <div class="ui-avatar-s">
@@ -236,18 +255,7 @@
     <!--MOB SHARE END-->
     <div class="fullImageContainer">
     </div>
-
-
-
     <script type="text/javascript">
-    $(document).ready(function() {
-        xkw = window.xkw;
-        //load资料,注意图片的路径
-        $("#paper-content").load("document/【全国百强校】安徽省合肥市第八中学2015-2016学年高一上学期期中考试数学试题（扫描版，无答案）/【全国百强校】安徽省合肥市第八中学2015-2016学年高一上学期期中考试数学试题（扫描版，无答案）.html", function() {
-            xkw.detail.bindEvent.paper();
-        });
-        xkw.detail.bindEvent.init();
-    }); 
     </script>
 </body>
 

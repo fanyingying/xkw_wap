@@ -2,19 +2,23 @@
  * detail.js
  * 范莹莹 2016.4.1  
  */
- 
+
 $(document).ready(function() {
     var errorDialog = $(".error-dialog");
-    var commentDialog = $(".comments-dialog"); 
+    var commentDialog = $(".comments-dialog");
     var fullImageContainer = $('#fullImageContainer');
-    
+
     var paperContent = $('#paper-content');
-    var paperContentBox = $('.paper-content-box'); 
+    var paperContentBox = $('.paper-content-box');
+
+    var softData = [];
     var common = xkw.common;
     var ui = xkw.ui;
+
     var bindEvent = {
         init: function() {
             //函数拓展
+            this.soft();
             xkw.system.limitTextarea();
             this.download();
             this.cart();
@@ -23,6 +27,151 @@ $(document).ready(function() {
             this.like();
             this.share();
 
+        },
+        soft: function() {
+            //设置资料预览区最大高度手机屏幕2屏
+            viewHeght = $(window).height();
+            paperContentBox.css({
+                maxHeight: 2 * viewHeght + "px"
+
+            });
+            //切换资料事件
+            $("#file-box .file-ul").delegate("li", "tap", function() {
+                var all = $("#file-box .file-ul li");
+                all.removeClass('active');
+                $(this).addClass('active');
+                var id = $(this).attr('data-id');
+                var softInfo = softData[id];
+                showData(softInfo);
+            });
+
+            //图片点击方法查看，支持手动放大缩小
+            paperContent.delegate("img", "tap", function() {
+                new ui.fullImage($(this));
+            });
+
+            //点击查看更多
+            $(".show-more").tap(function() {
+                paperContentBox.css({
+                    //height: contentHeight + "px"
+                    maxHeight: "initial"
+
+                });
+                $('.show-more').hide();
+
+            });
+
+
+            //资料ID
+            var softid = 1;
+
+            //获取资料
+            $.ajax({
+                type: 'POST',
+                url: '/soft/preview/softid',
+                data: {
+                    softid: softid
+                },
+                dataType: 'json',
+                success: function(data, status, xhr) {
+                    var data = [
+                        { "Type": "word", "MeidaUrl": "", "JPGInnerHtml": "<img src='http://cn.bing.com/th?id=OJ.2WZiXqwDHAYUDQ&pid=MSNJVFeeds&c=8&rs=1'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/>" },
+                        { "Type": "pdf", "MeidaUrl": "", "JPGInnerHtml": "<img src='http://cn.bing.com/th?id=OJ.2WZiXqwDHAYUDQ&pid=MSNJVFeeds&c=8&rs=1'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/>" }
+                    ]
+                    softData = data;
+                    successFun(softData);
+                },
+                error: function(xhr, errorType, error) {
+                    //这里用来测试  开始
+                    var data = [
+                        { "Type": "word", "MeidaUrl": "", "JPGInnerHtml": "<img src='http://cn.bing.com/th?id=OJ.2WZiXqwDHAYUDQ&pid=MSNJVFeeds&c=8&rs=1'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/>" },
+                        { "Type": "pdf", "MeidaUrl": "", "JPGInnerHtml": "<img src='http://mail.xkw.cn/skins/larry/images/roundcube_logo.png'/><img  src='http://oa.zxxk.com/AttachFile/EmpPhoto/HeadDefault.jpg'/>" },
+                        { "Type": "media", "MeidaUrl": "http://baidu.com", "JPGInnerHtml": "" }
+                    ];
+                    softData = data;
+                    successFun(softData);
+                    //这里用来测试 结束
+
+
+                    //失败提示
+                    ui.tips.init({
+                        content: '网络连接失败',
+                        stayTime: 2000
+                    });
+                }
+            })
+
+            /*资料请求成功的回调函数*/
+            function successFun(data) {
+                //没有数据
+                if (!data.length) {
+                    ui.tips.init({
+                        content: '资源id出错',
+                        stayTime: 2000
+                    });
+                    return;
+                }
+                //有数据
+
+                var fileBox = $('#file-box');
+                var fileStr = '';
+                //多条数据 压缩包
+                fileStr += '<li class="' + data[0].Type + ' active" data-id="' + 0 + '"></li>'
+                for (var i = 1; i < data.length; i++) {
+                    fileStr += '<li class="' + data[i].Type + '" data-id="' + i + '"></li>'
+                }
+                fileBox.find('.total .num').html(data.length);
+                $('#file-box .file-ul').html(fileStr);
+
+
+
+                fileBox.show();
+
+                showData(data[0]);
+
+                //文件框左右滚动
+                $('#file-box .file-ul').width(data.length * $('#file-box .file-ul li').width());
+                var fileScroll = new fz.Scroll('#file-box .ui-scroller', {
+                    scrollY: false,
+                    scrollX: true
+                });
+
+
+
+            }
+
+            /*展现资料内容函数*/
+            function showData(soft) {
+                //显示第一条数据
+                //判断第一条数据的类型
+                switch (soft.Type) {
+                    case "media":
+                        {
+                            paperContent.html('<div id="video-box"></div>');
+                            var flashvars = {
+                                f: soft.MeidaUrl,
+                                c: 0
+                            };
+                            var params = {
+                                bgcolor: '#FFF',
+                                allowFullScreen: true,
+                                allowScriptAccess: 'always',
+                                wmode: 'transparent'
+                            };
+                            var video = ['http://movie.ks.js.cn/flv/other/1_0.mp4->video/mp4'];
+                            CKobject.embed('libs/ckplayer/ckplayer.swf', 'video-box', 'ckplayer_video-box', '100%', '100%', true, flashvars, video, params);
+                            break;
+                        }
+
+                    default:
+                        { $('.show-more').show();
+                            paperContent.html(soft.JPGInnerHtml);
+
+                            break;
+                        }
+                }
+
+            }
         },
         download: function() {
             $("#download-btn").tap(function() {
@@ -88,16 +237,17 @@ $(document).ready(function() {
             });
 
             //评论框字数限制
-            $('.comments-dialog .txt-area').limitTextarea({
+            $('.comment-area .txt-area').limitTextarea({
                 maxNumber: 180, //允许输入的最大字数   
                 infoId: 'comments-num',
             });
 
             //评论框--发表评论 
-            $(".comments-dialog .J_submit").tap(function() {
-                $('.comments-dialog .txt-area').blur();
+            $(".comment-area .J_submit").tap(function() {
+                var textArea = $('.comment-area .txt-area');
+                textArea.blur();
                 //判断字数
-                if (!$('.comments-dialog .txt-area').val()) {
+                if (!textArea.val()) {
                     ui.tips.init({
                         content: '请输入评论内容',
                         stayTime: 2000
@@ -120,6 +270,9 @@ $(document).ready(function() {
                     stayTime: 2000
                 });
             });
+
+
+
 
 
             //关闭评论框
@@ -242,49 +395,29 @@ $(document).ready(function() {
         share: function() {
 
         },
-        paper: function() { 
+        paper: function() {
             //隐藏水印图片
-            $('div[style="-aw-headerfooter-type:header-primary"]').addClass('hide');
-
+            //$('div[style="-aw-headerfooter-type:header-primary"]').addClass('hide'); 
             //获取屏幕的高度 设置paperContentBox高度
             viewHeght = $(window).height();
-            var contentHeight = paperContent.height(); 
+
+            var contentHeight = paperContent.height();
             if (contentHeight > viewHeght * 3) {
                 paperContentBox.css({
                     height: viewHeght * 3 + "px"
                 });
             } else {
-                
-                paperContentBox.css({
-                    height: contentHeight + "px"
-                });
+
+                /* paperContentBox.css({
+                     height: contentHeight + "px"
+                 });*/
                 $('.show-more').hide();
             }
-
-            //图片点击方法查看，支持手动放大缩小
-            paperContent.delegate("img", "tap", function() {
-                new ui.fullImage($(this));
-            });
-
-            //点击查看更多
-            $(".show-more").tap(function() { 
-                paperContentBox.css({
-                    height: contentHeight + "px"
-                });
-                $('.show-more').hide();
-
-            });
-
         }
     }
 
-    xkw.detail = {
-        init: function() {
-            bindEvent.init();
-        },
-        bindEvent: bindEvent
-    };
 
 
+    bindEvent.init();
 
 });
