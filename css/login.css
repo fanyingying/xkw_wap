@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.login-reg .ui-form {
+  padding: 25px 20px 0px;
+}
+.login-reg .ui-form [class^=ui-icon2-] {
+  color: #c2c2c2;
+  width: 30px;
+  font-size: 25px;
+  line-height: 35px;
+  position: absolute;
+}
+.login-reg .ui-form-item {
+  height: 35px;
+  line-height: 35px;
+  position: relative;
+  margin-bottom: 18px;
+  padding-left: 0;
+}
+.login-reg .ui-form-item input {
+  padding-left: 25px;
+  line-height: 35px;
+}
+.login-reg .ui-form-item-r input:not([type=checkbox]):not([type=radio]) {
+  padding-left: 25px;
+}
+.login-reg #eye-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  width: 40px;
+}
+.login-reg #eye-btn.ui-icon2-eyeopen {
+  color: #1684f5;
+}
+.login-reg .send-yzma {
+  color: #1684f5;
+  border-radius: 15px;
+  width: 94px;
+  height: 30px;
+  border: 1px solid #1684f5;
+}
+.login-reg .third-login {
+  margin-top: 50px;
+  text-align: center;
+}
+.login-reg .third-login .title {
+  font-size: 15px;
+  color: #999;
+}
+.login-reg .third-login .list li {
+  max-width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: 1px solid #cccccc;
+  margin: 10px;
+}
+.login-reg .third-login .list li.qq i {
+  color: #4dafea;
+}
+.login-reg .third-login .list li.weixin i {
+  color: #3eb135;
+}
+.login-reg .third-login .list li.weibo i {
+  color: #df4d69;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> 
+    <title>登录</title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="login-reg">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return"></i>
+    </header>
+    <section class="ui-container">
+        <div class="ui-tab">
+            <ul class="ui-tab-nav ui-border-b"> 
+                <li class="current">登录</li>
+                <li class=""><a href="注册.html">注册</a></li>
+            </ul> 
+            <ul class="ui-tab-content">
+                <li class="login">
+                    <div class="ui-form ui-border-t">
+                        <form action="#"> 
+                            <div class="ui-form-item ui-border-b">
+                                <i class="ui-icon2-user"></i>
+                                <input type="number" placeholder="输入用户名/手机号/邮箱"> 
+                            </div>
+                            <div class="ui-form-item ui-form-item-pure ui-border-b">
+                                <i class="ui-icon2-lock"></i>
+                                <input type="password" placeholder="6-32位密码" id="password"> 
+                                <i class="ui-icon2-eyeclose" id="eye-btn"></i>
+                            </div> 
+                            <button class="ui-btn-lg ui-btn-primary">登录</button>
+                        </form>
+                    </div>
+                    <div class="third-login">
+                         <div class="title">使用其他账号登录</div>
+                         <ul class="list ui-row-flex ui-flex-pack-center">
+                             <li class="ui-col qq"><i class="ui-icon2-qq"></i></li>
+                             <li class="ui-col weixin"><i class="ui-icon2-weixin"></i></li> 
+                             <li class="ui-col weibo"><i class="ui-icon2-weibo"></i></li> 
+                         </ul>
+                    </div>
+                </li> 
+            </ul>
+        </div>
+    </section>
+   
+</body>
+
+
+    <script src="js/libs/zepto.min.js"></script>
+    <script src="js/libs/frozen.js"></script>
+    <script src="js/libs/hideShowPassword.min.js"></script> 
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script> 
+     <script>
+    $(document).ready(function() {
+
+    });
+    </script>
+</html>

@@ -61,6 +61,11 @@
 .ui-icon2-folder:before { content: "\e620"; }
 .ui-icon2-classify:before { content: "\e621"; }
 .ui-icon2-home2:before { content: "\e622"; }
+.ui-icon2-eyeclose:before { content: "\e623"; }
+.ui-icon2-eyeopen:before { content: "\e624"; }
+.ui-icon2-lock:before { content: "\e625"; }
+.ui-icon2-phone2:before { content: "\e626"; }
+.ui-icon2-yanzhengma:before { content: "\e619"; }
 
 body {
     -webkit-user-select: initial;
@@ -127,6 +132,27 @@ body {
   padding-top: 0px;
 }
 
+/* 按钮 */
+.ui-btn-primary{
+    background-color: #0099ff;
+    border-color: #0099ff;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0.5,#0f9fff),to(#0099ff));
+    color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.ui-btn-lg {
+    font-size: 18px;
+    height: 44px;
+    line-height: 44px;
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+}
+.ui-btn-lg:before {
+    border-radius: 40px;
+}
+
 /* 通用提示框 */ 
 .ui-tips {
     width: 100%;
@@ -167,7 +193,10 @@ body {
     background-color: #0099ff;
     color: #fff;
 }
-
+.ui-header .page-title {
+    text-align: center;
+    font-size: 18px
+}
 .ui-header .ui-icon2-home {
     position: absolute;
     right: 5px;
