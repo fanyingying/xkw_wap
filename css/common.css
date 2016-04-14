@@ -33,6 +33,7 @@
 .ui-icon2-tengxunweibo:before { content: "\e60f"; }
 .ui-icon2-weixin:before { content: "\e60c"; }
 .ui-icon2-pengyouquan:before { content: "\e611"; }
+.ui-icon2-jiahao:before { content: "\e612"; }
 .ui-icon2-collect:before { content: "\e607"; }
 .ui-icon2-comment:before { content: "\e608"; }
 .ui-icon2-download:before { content: "\e609"; }
@@ -44,6 +45,22 @@
 .ui-icon2-cart:before { content: "\e605"; }
 .ui-icon2-share:before { content: "\e606"; }
 .ui-icon2-search:before { content: "\e600"; }
+.ui-icon2-email:before { content: "\e610"; }
+.ui-icon2-comments3:before { content: "\e613"; }
+.ui-icon2-user:before { content: "\e614"; }
+.ui-icon2-collect2:before { content: "\e615"; }
+.ui-icon2-setting:before { content: "\e617"; }
+.ui-icon2-phone:before { content: "\e618"; }
+.ui-icon2-right:before { content: "\e616"; }
+.ui-icon2-money:before { content: "\e61a"; }
+.ui-icon2-recharge:before { content: "\e61c"; }
+.ui-icon2-hot:before { content: "\e61b"; }
+.ui-icon2-close:before { content: "\e61d"; }
+.ui-icon2-down:before { content: "\e61e"; }
+.ui-icon2-up:before { content: "\e61f"; }
+.ui-icon2-folder:before { content: "\e620"; }
+.ui-icon2-classify:before { content: "\e621"; }
+.ui-icon2-home2:before { content: "\e622"; }
 
 body {
     -webkit-user-select: initial;
@@ -146,7 +163,10 @@ body {
 
 
 
-
+.ui-header-positive, .ui-footer-positive {
+    background-color: #0099ff;
+    color: #fff;
+}
 
 .ui-header .ui-icon2-home {
     position: absolute;
@@ -167,6 +187,7 @@ body {
 }
 .ui-footer ul li{
   position: relative;
+  text-align: center;
 }
 .ui-footer ul li .line-r{
    position: absolute;
@@ -196,9 +217,11 @@ body {
    line-height: 12px;
    font-size: 11px;
    color: #666666;
+   text-align: center;
+   width: 100%;
 } 
 .ui-footer-btn .ui-tiled li.active{
-   background-color: #efefef;
+   /* background-color: #efefef; */
        -webkit-transition: all .4s cubic-bezier(0.31,-.105,.43,1.4);
     -moz-transition: all .4s cubic-bezier(0.31,-.105,.43,1.4);
     -ms-transition: all .4s cubic-bezier(0.31,-.105,.43,1.4);

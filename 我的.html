@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的</title>
+    <meta name="description" content="这里填写要分享的内容" />
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/account.css">
+    <script src="js/libs/zepto.min.js"></script>
+    <script src="js/libs/frozen.js"></script> 
+    <script src="js/libs/circles.min.js"></script>      
+    <script src="js/common.js"></script>
+    <script src="js/account.js"></script>
+</head>
+
+<body class="my-account">
+    <footer class="ui-footer ui-footer-btn">
+        <ul class="ui-tiled">
+            <li data-href="index.html" class="ui-border-t">
+                <i class="ui-icon2-home2"></i>
+                <div>首页</div>
+            </li>
+            <li data-href="分类.html" class="ui-border-t">
+                <i class="ui-icon2-classify"></i>
+                <div>分类</div>
+            </li>
+            <li data-href="资源篮.html" class="ui-border-t">
+                <i class="ui-icon2-cart"></i>
+                <div>资源篮</div>
+            </li>
+            <li data-href="我的.html" class="ui-border-t active">
+                <i class="ui-icon2-user"></i>
+                <div>我的</div>
+            </li>
+        </ul>
+    </footer>
+    <section class="ui-container">
+        <div class="title-box " id="to-login">
+            <div class="set-subject">
+                <span class="text">我的教材</span>
+                <a class="set-subject-btn" href="设置学科.html">立即设置</a>
+            </div>
+            <a class="ui-btn-lg login-btn" href="登录注册.html">登录</a>
+            <div class="to-reg">
+                <span class="text">学科网，备课更省心！</span>
+                <a href="登录注册.html">立即注册></a>
+            </div>
+        </div>
+        <div class="title-box hide" id="is-login">
+            <div class="set-subject">
+                <span class="text">我的教材：</span>
+                <span class="subject-name">数学>八年级>人教版上</span>
+                <a class="edit-subject-btn" href="设置学科.html">修改</a>
+            </div>
+            <div class="user-warp ui-row-flex">
+                <div class="ui-col" id="progressContainer" data-value="90"></div>  
+                <div class="user-info ui-col">
+                    <span class="username">jwfan910@163.com</span>
+                    <span class="userid">(ID:12270097)</span> 
+                    <button class="ui-btn ui-btn-danger logout-btn" id="logout-btn">退出</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="ui-tab">
+            <ul class="ui-tab-nav ui-border-b">
+                <li class="current">常用功能</li>
+                <li class=""></li>
+            </ul>
+            <div class="hr"></div>
+            <ul class="ui-tab-content  ui-border-b">
+                <li class="menu-box">
+                    <ul class="ui-row-flex ui-border-t">
+                        <li class="ui-col ui-border-r" id="recharge-btn" data-href="充值.html">
+                            <i class="ui-icon2-recharge"></i>
+                            <div>充值</div>
+                        </li>
+                        <li class="ui-col ui-border-r" id="collect-btn" data-href="收藏.html">
+                            <i class="ui-icon2-collect2"></i>
+                            <div>收藏</div>
+                        </li>
+                        <li class="ui-col ui-border-r" id="mail-btn" data-href="站内信.html">
+                            <i class="ui-icon2-comments3"></i>
+                            <div>站内信</div>
+                        </li>
+                    </ul>
+                    <ul class="ui-row-flex ui-border-t">
+                        <li class="ui-col ui-border-r" id="money-btn" data-href="账户余额.html">
+                            <i class="ui-icon2-money"></i>
+                            <div>账户余额</div>
+                        </li>
+                        <li class="ui-col ui-border-r" id="setting-btn" data-href="个人信息.html">
+                            <i class="ui-icon2-setting"></i>
+                            <div>个人信息</div>
+                        </li>
+                        <li class="ui-col ui-border-r" id="help-btn" data-href="帮助反馈.html">
+                            <i class="ui-icon2-phone"></i>
+                            <div>帮助反馈</div>
+                        </li>
+                    </ul>
+
+                    <ul class="ui-row-flex ui-border-t">
+                        <li class="ui-col ui-border-r" id="add-btn">
+                            <i class="ui-icon2-jiahao"></i> 
+                        </li>
+                        <li class="ui-col ui-border-r">
+                            <i></i>
+                            <div></div>
+                        </li>
+                        <li class="ui-col ui-border-r">
+                            <i></i>
+                            <div></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script>
+    $(document).ready(function() {
+        xkw.account.bindEvent.init();
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+.my-account {
+  background-color: #f0f0f0;
+}
+.my-account .ui-container {
+  background-color: #fff;
+  border-bottom: 56px solid #f0f0f0;
+}
+.my-account .title-box {
+  height: 219px;
+  background-image: url('../img/my_bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.my-account .title-box .set-subject {
+  color: #fff;
+  font-size: 14px;
+  padding: 16px 20px 0px 20px;
+}
+.my-account .title-box .set-subject .text {
+  font-size: 14px;
+}
+.my-account .title-box .set-subject a {
+  color: #ffcc31;
+  font-size: 15px;
+}
+.my-account .title-box .set-subject .edit-subject-btn {
+  float: right;
+}
+.my-account .title-box .login-btn {
+  color: #1684f5;
+  width: 41%;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+}
+.my-account .title-box .login-btn:before {
+  border-radius: 50px;
+}
+.my-account .title-box .to-reg {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+.my-account .title-box .to-reg a {
+  color: #ffcc31;
+}
+.my-account .user-warp {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 45px;
+}
+.my-account .user-warp #progressContainer {
+  max-width: 86px;
+  float: left;
+  margin-right: 10px;
+}
+.my-account .user-warp .circles-text {
+  font-size: 25px !important;
+  line-height: 25px !important;
+  color: #1684f5;
+}
+.my-account .user-warp .circles-text .text {
+  color: #333;
+  font-size: 14px !important;
+  display: block;
+  line-height: 25px !important;
+  margin-top: 15px;
+}
+.my-account .user-warp svg {
+  background-color: #c9e7fb;
+  border-radius: 50px;
+}
+.my-account .user-warp .user-info {
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  line-height: 26px;
+}
+.my-account .user-warp .user-info .username {
+  font-size: 14px;
+  display: block;
+}
+.my-account .user-warp .user-info .userid {
+  font-size: 12px;
+  display: block;
+}
+.my-account .user-warp .user-info .logout-btn {
+  background-color: #ff9402;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #ff990f), to(#ff9402));
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  width: 82px;
+  height: 28px;
+  line-height: 28px;
+}
+.my-account .user-warp .user-info .logout-btn:before {
+  border: none;
+}
+.my-account .ui-tab-nav li {
+  border-bottom: 1px solid #c9c9c9;
+}
+.my-account .ui-tab-nav li.current {
+  border-bottom: 2px solid #00a5e0;
+}
+.my-account .menu-box {
+  text-align: center;
+}
+.my-account .menu-box li {
+  padding: 18px 0px;
+}
+.my-account .menu-box [class^=ui-icon2-] {
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 4px;
+}
+.my-account .menu-box #recharge-btn i {
+  background-color: #ff7828;
+}
+.my-account .menu-box #collect-btn i {
+  background-color: #f8910b;
+}
+.my-account .menu-box #mail-btn i {
+  background-color: #00d2c1;
+}
+.my-account .menu-box #money-btn i {
+  background-color: #bac601;
+}
+.my-account .menu-box #setting-btn i {
+  background-color: #03c381;
+}
+.my-account .menu-box #help-btn i {
+  background-color: #ea5a3d;
+}
+.my-account .menu-box #add-btn i {
+  color: #d7d7d7;
+  font-size: 40px;
+  line-height: 54px;
+  height: 54px;
+  width: 54px;
+}

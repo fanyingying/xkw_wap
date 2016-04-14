@@ -3,7 +3,7 @@
  * fanyy 2016.4.1  
  */
 
- 
+
 $(document).ready(function() {
     xkw = {
         version: "0.0.1",
@@ -476,13 +476,20 @@ $(document).ready(function() {
             $('.ui-icon-close').tap(function() {
                 $('.ui-searchbar-input input').val('');
             });
+        },
+        footerMenu: function() {
+            $('.ui-list li,.ui-tiled li,.menu-box li').click(function() {
+                if ($(this).data('href')) {
+                    location.href = $(this).data('href');
+                }
+            });
         }
     }
- 
+
 
     xkw.common = {
 
     };
 
-    window.Q = window.xkw = xkw;
+    window.Q = window.xkw = xkw; 
 });

@@ -318,14 +318,17 @@ img {
 
 
 /* 评论 */
-.num.error{
-     color: #EB6100;
-}
-.comment-area {
-    padding: 15px;
+
+.num.error {
+    color: #EB6100;
 }
 
-.comment-area .txt-area { 
+.comment-area {
+    padding: 15px;
+    position: relative;
+}
+
+.comment-area .txt-area {
     display: block;
     border-color: #bebebe;
     height: 70px;
@@ -334,13 +337,16 @@ img {
 .comment-area .action {
     max-width: 70px;
     text-align: right;
+    padding-top: 35px;
 }
 
 .comment-area .num {
     line-height: 15px;
     font-size: 12px;
-    margin-top: 25px;
     padding-right: 5px;
+    position: absolute;
+    right: 85px;
+    bottom: 15px;
 }
 
 .comment .title {
