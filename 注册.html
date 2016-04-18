@@ -14,13 +14,13 @@
 
 <body class="login-reg">
     <header class="ui-header ui-header-positive ui-border-b">
-        <i class="ui-icon-return"></i>
+        <i class="ui-icon-return" onclick="history.back()"></i>
     </header>
     <section class="ui-container">
         <div class="ui-tab">
             <ul class="ui-tab-nav ui-border-b"> 
-                <li class="current">注册</li>
                 <li class=""><a href="登录.html">登录</a></li>
+                <li class="current">注册</li>
             </ul> 
             <ul class="ui-tab-content  ui-border-b">
                 <li class="reg">
@@ -31,12 +31,12 @@
                                 <i class="ui-icon2-phone2"></i>
                                 <input type="number" placeholder="11位手机号码">
                                 <!-- 若按钮不可点击则添加 disabled 类 -->
-                                <button type="button" class="send-yzma" id="send-yzma">重新发送</button> 
+                                <button type="button" class="send-yzma" id="send-yzma">获取验证码</button> 
                             </div>
                             <div class="ui-form-item ui-form-item-pure ui-border-b">
                                 <i class="ui-icon2-lock"></i>
-                                <input type="password" placeholder="6-32位密码" id="password"> 
-                                <i class="ui-icon2-eyeopen" id="eye-btn"></i>
+                                <input type="password" placeholder="6-14位密码" id="password"> 
+                                <i class="ui-icon2-eyeopen hide" id="eye-btn"></i>
                             </div>
 
                             <div class="ui-form-item ui-form-item-pure ui-border-b">

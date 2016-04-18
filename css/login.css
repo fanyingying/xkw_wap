@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* 注册登录 */
+.login-reg .ui-tab-nav li a {
+  display: block;
+}
 .login-reg .ui-form {
   padding: 25px 20px 0px;
 }
@@ -33,12 +37,12 @@
 .login-reg #eye-btn.ui-icon2-eyeopen {
   color: #1684f5;
 }
-.login-reg .send-yzma {
-  color: #1684f5;
-  border-radius: 15px;
-  width: 94px;
-  height: 30px;
-  border: 1px solid #1684f5;
+.login-reg .forget {
+  display: block;
+  text-align: right;
+  margin-bottom: 15px;
+  font-size: 15px;
+  padding-right: 15px;
 }
 .login-reg .third-login {
   margin-top: 50px;
@@ -53,7 +57,7 @@
   height: 53px;
   border-radius: 50%;
   border: 1px solid #cccccc;
-  margin: 10px;
+  margin: 10px 20px;
 }
 .login-reg .third-login .list li.qq i {
   color: #4dafea;
@@ -63,4 +67,70 @@
 }
 .login-reg .third-login .list li.weibo i {
   color: #df4d69;
+}
+/* 验证码按钮 */
+.ui-form-item-l label,
+.ui-form-item-r button {
+  color: #1684f5;
+  border-radius: 15px;
+  height: 30px;
+  border: 1px solid #1684f5;
+}
+/* 密码找回 */
+.ui-btn.unused,
+.unused.ui-btn-lg,
+.unused.ui-btn-s {
+  color: #ccc;
+}
+.find-pwd {
+  background-color: #efefef;
+}
+.find-pwd .title-tips {
+  font-size: 12px;
+  color: #848484;
+  padding-left: 10px;
+  line-height: 24px;
+}
+.find-pwd .ui-form .tips {
+  color: #0099ff;
+  display: block;
+  position: absolute;
+  padding-left: 10px;
+}
+.find-pwd .ui-form-item {
+  height: 55px;
+  line-height: 55px;
+  position: relative;
+  padding-left: 0;
+}
+.find-pwd .ui-form-item input {
+  padding-left: 105px;
+  text-align: center;
+}
+.find-pwd .ui-form-item-r input:not([type=checkbox]):not([type=radio]) {
+  padding-left: 105px;
+}
+.find-pwd .button-box {
+  padding: 0px 15px;
+}
+.find-pwd .ui-btn-lg {
+  margin-top: 95px;
+}
+.find-pwd .ui-form-item-r button.send-yzma {
+  margin-top: 12px;
+}
+.find-pwd .ui-form-item-r button.already {
+  font-size: 14px;
+  color: #848484;
+  border: none;
+}
+.find-pwd.step2 .ui-form-item input {
+  padding-left: 95px;
+  text-align: left;
+}
+.find-pwd.step2 .ui-form-item-r input:not([type=checkbox]):not([type=radio]) {
+  padding-left: 95px;
+}
+.find-pwd.success {
+  background-color: #fff;
 }

@@ -9,19 +9,38 @@ $(document).ready(function() {
     bindEvent = {
         init: function() {
             this.initEvent();
-            this.initTab(); //tab切换，当只有一个tab时候不需要
+
         },
         initTab: function() {
-            var tab = new fz.Scroll('.ui-tab', {
-                role: 'tab',
-                autoplay: false,
-                interval: 3000
-            });
+
         },
         initEvent: function() {
+
+            //验证码倒计时
+            var countdown = 60; 
+            function settime(obj) {
+                if (countdown == 0) { 
+                    obj.attr("disabled","true");
+                    obj.text("获取验证码");
+                    countdown = 60;
+                    return;
+                } else {
+                    obj.attr("disabled","false");
+                     
+                    obj.text("重新发送(" + countdown + ")");
+                    countdown--;
+                }
+                setTimeout(function() {
+                    settime(obj)
+                }, 1000)
+            }
+
             //点击发送验证码
             $('#send-yzma').tap(function() {
                 //TODO 验证手机号码
+
+
+                settime($(this));
 
 
                 ui.tips.init({
@@ -31,21 +50,29 @@ $(document).ready(function() {
             });
 
 
+
             //点击眼睛事件
             $('#eye-btn').tap(function() {
                 $('#password').hideShowPassword('toggle');
-            }); 
+            });
             $('#password').on('passwordShown', function() {
                 $('#eye-btn').removeClass('ui-icon2-eyeopen');
                 $('#eye-btn').addClass('ui-icon2-eyeclose');
 
-            }).on('passwordHidden', function() { 
+            }).on('passwordHidden', function() {
                 $('#eye-btn').addClass('ui-icon2-eyeopen');
                 $('#eye-btn').removeClass('ui-icon2-eyeclose');
             });
 
 
-
+            //点击
+            $('#password').focus(function() {
+                $('#eye-btn').removeClass('hide');
+            }).blur(function() {
+                if (!$('#password').val()) {
+                    $('#eye-btn').addClass('hide');
+                }
+            });
 
         }
     }

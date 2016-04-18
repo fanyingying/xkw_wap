@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>资源列表页</title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="这里填写要分享的内容" />
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+    <header class="ui-header ui-header-positive">
+        <i class="ui-icon-return" onclick="history.back()"></i>
+        <h1>数学</h1>
+        <a class="ui-icon2-search" href="#"></a>
+        <div class="select-box">
+            <ul class="ui-row-flex mnmenu level-0" id="menu-list">
+                <li class="ui-col level-0">
+                    <h2>试卷</h2>
+                    <i class="ui-icon-unfold"></i>
+                    <ul class="level-1">
+                        <li data-id="" class="active level-1">试卷</li>
+                        <li data-id="" class="level-1">教案</li>
+                        <li data-id="" class="level-1">课件</li>
+                        <li data-id="" class="level-1">导学案</li>
+                        <li data-id="" class="level-1">视频</li>
+                        <li data-id="" class="level-1">素材</li>
+                        <li data-id="" class="level-1">备课综合</li>
+                    </ul>
+                </li>
+                <li class="ui-col level-0">
+                    <h2>八年级</h2>
+                    <i class="ui-icon-unfold"></i>
+                    <ul class="level-1">
+                        <li class="level-1 active">
+                            <span class="text">教材同步</span>
+                            <ul class="level-2">
+                                <li class="level-2">七年级</li>
+                                <li class="level-2 active">八年级</li>
+                                <li class="level-2">九年级</li>
+                                <li class="level-2">必修1</li>
+                                <li class="level-2">必修2</li>
+                                <li class="level-2">必修3</li>
+                                <li class="level-2">必修4</li>
+                                <li class="level-2">必修5</li>
+                                <li class="level-2">选修系列</li>
+                            </ul>
+                        </li>
+                        <li class="level-1"><span class="text">知识点</span>
+                            <ul class="level-2">
+                                <li class="level-2">集合和常用逻辑用语</li>
+                                <li class="level-2 active">函数与导数</li>
+                                <li class="level-2">平面向量</li>
+                                <li class="level-2">数列</li>
+                                <li class="level-2">不等式</li>
+                                <li class="level-2">立体几何</li>
+                                <li class="level-2">解析几何</li>
+                                <li class="level-2">计数原理与概率统计</li>
+                                <li class="level-2">矩阵与行列式</li>
+                                <li class="level-2">算法与框图</li>
+                                <li class="level-2">几何证明选讲</li>
+                            </ul>
+                        </li>
+                        <li class="level-1"><span class="text">课件</span></li>
+                        <li class="level-1"><span class="text">通用试卷</span></li>
+                        <li class="level-1"><span class="text">高考资源</span></li>
+                        <li class="level-1"><span class="text">中考资源</span></li>
+                    </ul>
+                </li>
+                <li class="ui-col level-0  filter">
+                    <h2>筛选</h2>
+                    <i class="ui-icon-unfold"></i>
+                    <ul class="level-1">
+                        <li class="level-1 active">
+                            <span class="text">年份</span>
+                            <ul class="level-2">
+                                <li class="level-2" data-id="2" data-pid="1">2017</li>
+                                <li class="level-2">2016</li>
+                                <li class="level-2">2015</li>
+                                <li class="level-2">2014</li>
+                                <li class="level-2">2013</li>
+                            </ul>
+                        </li>
+                        <li class="level-1"><span class="text">价格类型</span>
+                            <ul class="level-2">
+                                <li class="level-2 active">全部</li>
+                                <li class="level-2">免费</li>
+                                <li class="level-2">年份</li>
+                                <li class="level-2">储值</li>
+                                <li class="level-2">点数</li>
+                                <li class="level-2">特供</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="button-box ui-border-b ">
+                <div class="result-box ui-border-t">
+                    <span class="ui-label2">2016 <i class="ui-icon2-close"></i></span>
+                    <span class="ui-label2">免费<i class="ui-icon2-close"></i></span>
+                </div>
+                <ul class="ui-row-flex ui-border-t">
+                    <li class="ui-col  ui-border-r" id="reset-btn">重置</li>
+                    <li class="ui-col" id="finish-btn">完成</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- content应该拥有"pull-to-refresh-content"类,表示启用下拉刷新 -->
+    <section class="ui-container pull-to-refresh-content">
+        <div class="ui-bg"></div>
+        <!-- 下面是正文 -->
+        <div class="ui-scroller zl-list">
+            <ul>
+                <li>
+                    <a href="资料详情.html" class="ui-row-flex ui-border-b">
+                        <div class="file-type word"></div>
+                        <div class="ui-col title-box">
+                            <div class="title">辽宁省葫芦岛一中2015-2016学年高二上学期期中物理试卷【解析版】</div>
+                            <div class="ui-row-flex price-box">
+                                <div class="ui-col price">￥1普通点</div>
+                                <div class="ui-col size">138.4Kb</div>
+                                <div class="ui-col">已经下载167次</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="资料详情.html" class="ui-row-flex ui-border-b">
+                        <div class="file-type word"></div>
+                        <div class="ui-col title-box">
+                            <div class="title">辽宁省葫芦岛一中2015-2016学年高二上学期期中物理试卷【解析版】</div>
+                            <div class="ui-row-flex price-box">
+                                <div class="ui-col price">￥1普通点</div>
+                                <div class="ui-col size">138.4Kb</div>
+                                <div class="ui-col">已经下载167次</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropload-down view-more">
+            <div class="dropload-load"><span class="text">点击加载更多</span><span class="loading hide"></span></div>
+        </div>
+    </section>
+</body>
+<script src="js/libs/zepto.min.js"></script>
+<script src="js/libs/frozen.js"></script>
+<script src="js/libs/dropload.js"></script>
+<script src="js/common.js"></script>
+<script src="js/list.js"></script>
+<script>
+$(document).ready(function() {
+    xkw.list.bindEvent.init();
+});
+</script>
+
+</html>

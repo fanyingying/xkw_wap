@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>密码找回2</title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="find-pwd step2">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.back()"></i>
+        <div class="page-title">密码找回</div>
+    </header>
+    <section class="ui-container">
+        <div class="title-tips">重置密码</div>
+        <form action="#">
+            <div class="ui-form ui-border-t">
+                <div class="ui-form-item  ui-border-b">
+                    <span class="tips">设置新密码</span>
+                    <input type="password" placeholder="由6-14位数字、字母和字符组成" id="password1">
+                </div>
+                <div class="ui-form-item  ui-border-b">
+                    <span class="tips">确认新密码</span>
+                    <input type="password" placeholder="请再次输入上面的密码" id="password2"> 
+                </div>
+            </div>
+            <div class="button-box">
+              <button class="ui-btn-lg ui-btn-primary" id="submit-btn2">提交</button>
+                
+            </div>
+        </form>
+    </section>
+</body>
+<script src="js/libs/zepto.min.js"></script>
+<script src="js/libs/frozen.js"></script> 
+<script src="js/common.js"></script>
+<script src="js/findpwd.js"></script>
+<script>
+$(document).ready(function() {
+
+});
+</script>
+
+</html>

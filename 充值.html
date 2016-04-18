@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>充值</title>
+    <meta name="Keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="css/frozen.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+
+<body class="recharge">
+    <header class="ui-header ui-header-positive ui-border-b">
+        <i class="ui-icon-return" onclick="history.back()"></i>
+        <div class="page-title">充值</div>
+    </header>
+    <section class="ui-container">
+        <form action="#">
+            <div class="ui-form ui-border-t">
+                <div class="ui-input-wrap ui-border-t">
+                    <div class="ui-input ui-border-radius">
+                        <input type="number" name="" value="" placeholder="输入金额（≥50）" id="price">
+                    </div>
+                    <i class="unit">元</i>
+                </div>
+                <div class="hr"></div>
+                <div class="tips ui-border-b">
+                    兑换方式<span class="text">（1元现金兑换1元储值）</span>
+                </div>
+                <ul class="ui-row-flex change-type">
+                    <li class="ui-col">
+                        <label class="ui-radio" for="radio">
+                            <input type="radio" name="radio" checked="checked"> 储值
+                        </label>
+                    </li>
+                    <li class="ui-col">
+                        <label class="ui-radio" for="radio">
+                            <input type="radio" name="radio">高级点
+                        </label>
+                    </li>
+                    <li class="ui-col">
+                        <label class="ui-radio" for="radio">
+                            <input type="radio" name="radio">普通点
+                        </label>
+                    </li>
+                </ul>
+                <div class="hr"></div>
+                <div class="pay-type">
+                    <div class="tips ui-border-b">
+                        支付方式
+                    </div>
+                    <div class="ui-form-item ui-form-item-link ui-border-b">
+                        <a href="#"><i class="ui-icon2-zhifubao"></i>支付宝</a>
+                    </div>
+                    <div class="ui-form-item ui-form-item-link ui-border-b">
+                        <a href="#"><i class="ui-icon2-weixin2"></i>微信</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div class="ui-dialog error-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-dialog-hd">
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="ui-dialog-bd">
+               
+               
+            </div>
+        </div>
+    </div>
+    <!-- /.error-dialog-->
+</body>
+<script src="js/libs/zepto.min.js"></script>
+<script src="js/libs/frozen.js"></script>
+<script>
+$(document).ready(function() {
+    //输入金额后支付方式颜色变化
+    $('#price').keyup(function() {
+        var val = $(this).val();
+        if (!val) {
+            $('.pay-type').removeClass('active');
+            return;
+        }
+
+        //TODO :校验数字格式
+
+        //验证无误后颜色变化,否则按钮不可以操作
+        $('.pay-type').addClass('active');
+    });
+
+
+    //充值成功提示框
+    $(".error-dialog").find('.ui-dialog-bd').html('<span class="title">充值成功！</span> <a href="#" class="link">查看充值记录，需用电脑端登录</a>');
+    $(".error-dialog").dialog("show");
+
+     //充值失败提示框
+    $(".error-dialog").find('.ui-dialog-bd').html('<span class="title">充值失败！</span> <a href="#" class="link">请重试一次</a>');
+    $(".error-dialog").dialog("show");
+
+
+});
+</script>
+
+</html>

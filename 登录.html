@@ -14,7 +14,7 @@
 
 <body class="login-reg">
     <header class="ui-header ui-header-positive ui-border-b">
-        <i class="ui-icon-return"></i>
+        <i class="ui-icon-return" onclick="history.back()"></i>
     </header>
     <section class="ui-container">
         <div class="ui-tab">
@@ -28,13 +28,14 @@
                         <form action="#"> 
                             <div class="ui-form-item ui-border-b">
                                 <i class="ui-icon2-user"></i>
-                                <input type="number" placeholder="输入用户名/手机号/邮箱"> 
+                                <input type="text" placeholder="输入用户名/手机号/邮箱"> 
                             </div>
                             <div class="ui-form-item ui-form-item-pure ui-border-b">
                                 <i class="ui-icon2-lock"></i>
-                                <input type="password" placeholder="6-32位密码" id="password"> 
-                                <i class="ui-icon2-eyeclose" id="eye-btn"></i>
+                                <input type="password" placeholder="输入密码" id="password"> 
+                                <i class="ui-icon2-eyeopen hide" id="eye-btn"></i>
                             </div> 
+                            <a href="密码找回1.html" class="forget">忘记密码</a>
                             <button class="ui-btn-lg ui-btn-primary">登录</button>
                         </form>
                     </div>

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* 我的页面 */
 .my-account {
   background-color: #f0f0f0;
 }
@@ -11,7 +12,7 @@
   background-image: url('../img/my_bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 .my-account .title-box .set-subject {
   color: #fff;
@@ -146,4 +147,120 @@
   line-height: 54px;
   height: 54px;
   width: 54px;
+}
+/* 重置页面 */
+.recharge .ui-input-wrap {
+  background-color: #fff;
+  height: 80px;
+}
+.recharge .ui-input-wrap input {
+  color: #666666;
+}
+.recharge .ui-border-radius:before {
+  border-radius: 50px;
+}
+.recharge .ui-input {
+  height: 45px;
+  line-height: 45px;
+  padding-left: 20px;
+}
+.recharge .unit {
+  color: #0099ff;
+}
+.recharge .tips {
+  font-size: 18px;
+  color: #333;
+  line-height: 56px;
+  margin: 0px 15px;
+}
+.recharge .tips .text {
+  font-size: 12px;
+  color: #666;
+}
+.recharge .change-type {
+  padding: 0px 15px;
+  text-align: center;
+  line-height: 65px;
+  font-size: 15px;
+  color: #333333;
+}
+.recharge .change-type .ui-radio input {
+  margin-right: 0px;
+  width: 24px;
+  height: 24px;
+}
+.recharge .change-type .ui-radio input:before {
+  width: 18px;
+  height: 18px;
+}
+.recharge .change-type .ui-radio input:checked:after {
+  font-family: iconfont!important;
+  font-size: 36px;
+  line-height: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2px;
+  content: "\f604";
+  color: #ff9402;
+  display: block;
+  width: 30px;
+  height: 20px;
+  background: none;
+  border-radius: 7px;
+  position: absolute;
+  left: -7px;
+  top: 0px;
+}
+.recharge .pay-type a {
+  color: #888888;
+  line-height: 60px;
+}
+.recharge .pay-type [class^=ui-icon2-] {
+  color: #888888;
+  display: inline-block;
+  line-height: 60px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.recharge .pay-type .ui-form-item {
+  height: 60px;
+  line-height: 60px;
+}
+.recharge .pay-type.active .ui-icon2-zhifubao {
+  color: #09aafd;
+}
+.recharge .pay-type.active .ui-icon2-weixin2 {
+  color: #3ed021;
+}
+/* 我的余额页面 */
+.balance .ui-container {
+  padding-top: 100px;
+}
+.balance .ui-grid-halve li .num {
+  font-size: 22px;
+  line-height: 90px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
+.balance .ui-grid-halve li .num.ptd {
+  background-color: #5a93fc;
+}
+.balance .ui-grid-halve li .num.gjd {
+  background-color: #00d2c1;
+}
+.balance .ui-grid-halve li .num.cz {
+  background-color: #f8910b;
+}
+.balance .ui-grid-halve li .num.xj {
+  background-color: #30b6dd;
+}
+.balance .ui-grid-halve li .text {
+  text-align: center;
+  font-size: 14px;
+  line-height: 25px;
+  color: #333;
 }
