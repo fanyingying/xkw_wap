@@ -32,10 +32,11 @@ $(document).ready(function() {
                 }
                 $('#menu-list>li.level-0').not(this).removeClass('active');
                 $(this).toggleClass('active');
+                $('#progess .list-box').addClass('hide');
                 if ($(this).hasClass('active')) {
-                    $('.ui-container').addClass('active');
+                    $('.ui-bg').addClass('active');
                 } else {
-                    $('.ui-container').removeClass('active');
+                    $('.ui-bg').removeClass('active');
                 }
             });
 
@@ -109,7 +110,7 @@ $(document).ready(function() {
             $('#finish-btn').tap(function() {
                 //关闭下拉菜单
                 $('#menu-list>li.level-0').removeClass('active');
-                $('.ui-container').removeClass('active');
+                $('.ui-bg').removeClass('active');
                 $('.button-box').removeClass('active');
 
                 //ajax请求
@@ -215,6 +216,51 @@ $(document).ready(function() {
                 //加载完成之后 隐藏loading
                 //$('.view-more .text').removeClass('hide');
                 //$('.view-more .ui-loading').addClass('hide');
+            });
+
+ 
+
+            //我的进度
+            $('#choose-btn').tap(function() {
+                $('.ui-bg').toggleClass('ui-bg-progess');
+                $('.progess').toggleClass('active');
+                $('.progess-box').toggleClass('active');
+                //显示对应版本的进度
+                var versionId = $('.version-list li.current').attr('data-id');
+                $('.progess .ui-scroller-box').hide();
+                $('.progess .ui-scroller-box[data-pid="' + versionId + '"]').show();
+
+                var scroll = new fz.Scroll('.ui-scroller-box[data-pid="' + versionId + '"]', {
+                    scrollY: true
+                });
+            });
+
+            //点击修改按钮
+            $('.version .edit').tap(function() {
+                event.stopPropagation(); // 阻止事件冒泡 
+                $('.ui-bg-version').toggleClass('hide');
+                $('.version-list').toggleClass('hide');
+
+
+            });
+            //修改版本
+            $('.version-list').delegate('li', 'tap', function() {
+                var all = $('.version-list li').removeClass('current');
+                $(this).addClass('current');
+                $('.my-version').html($(this).text());
+
+
+                //显示对应版本的进度
+                var versionId = $('.version-list li.current').attr('data-id');
+                $('.progess .ui-scroller-box').hide();
+                $('.progess .ui-scroller-box[data-pid="' + versionId + '"]').show();
+                var scroll = new fz.Scroll('.ui-scroller-box[data-pid="' + versionId + '"]', {
+                    scrollY: true
+                });
+
+                //关闭框
+                $('.ui-bg-version').toggleClass('hide');
+                $('.version-list').toggleClass('hide');
             });
 
         }
